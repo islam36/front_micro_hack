@@ -8,9 +8,11 @@ import {
   TableHead,
   TableRow,
   Chip,
-  Pagination
+  Pagination,
 } from "@mui/material";
 import BaseCard from "../baseCard/BaseCard";
+import Feather from "feather-icons-react";
+import { useRouter } from "next/router";
 
 const machines = [
   {
@@ -49,11 +51,13 @@ const machines = [
 
 const bg = {
   "bon état": "#03c9d7",
-  endommagée: "#e46a76",
-  fonctionnel: "#fb9678",
+  'endommagée': "#e46a76",
+  'fonctionnel': "#fb9678",
 };
 
 const MachinesTable = () => {
+  const router = useRouter();
+
   return (
     <BaseCard title="Liste des machines">
       <Table
@@ -95,11 +99,22 @@ const MachinesTable = () => {
                 Date de mise en place
               </Typography>
             </TableCell>
+            <TableCell>
+              <Typography color="textSecondary" variant="h6">
+                Actions
+              </Typography>
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {machines.map((machine) => (
-            <TableRow key={machine.id} className="table-row">
+            <TableRow
+              key={machine.id}
+              className="table-row"
+              onClick={() => {
+                router.push(`/machines/${machine.id}`);
+              }}
+            >
               <TableCell>
                 <Typography variant="h6">{machine.id}</Typography>
               </TableCell>
@@ -131,14 +146,43 @@ const MachinesTable = () => {
               <TableCell>
                 <Typography variant="h6">{machine.date}</Typography>
               </TableCell>
+              <TableCell>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "10px",
+                  }}
+                >
+                  <a href="#">
+                    <Feather
+                      icon="edit-2"
+                      width="20"
+                      height="20"
+                      color="#03c9d7"
+                    />
+                  </a>
+
+                  <a href="#">
+                    <Feather
+                      icon="trash-2"
+                      width="20"
+                      height="20"
+                      color="#fb9678"
+                    />
+                  </a>
+                </div>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
 
-      <Stack spacing={2} sx={{
-        mt: "20px"
-      }}>
+      <Stack
+        spacing={2}
+        sx={{
+          mt: "20px",
+        }}
+      >
         <Pagination count={10} color="primary" />
       </Stack>
     </BaseCard>
