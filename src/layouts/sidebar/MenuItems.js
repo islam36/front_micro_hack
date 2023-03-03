@@ -5,6 +5,11 @@ const Menuitems = [
     href: "/",
   },
   {
+    title: "Machines",
+    icon: "monitor",
+    href: "/machines",
+  },
+  {
     title: "Buttons",
     icon: "disc",
     href: "/buttons",
@@ -39,11 +44,7 @@ const Menuitems = [
     icon: "grid",
     href: "/table",
   },
-  {
-    title: "Machines",
-    icon: "monitor",
-    href: "/machines",
-  },
+
 ];
 
 export default Menuitems;

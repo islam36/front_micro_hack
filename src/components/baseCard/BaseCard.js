@@ -12,7 +12,7 @@ import {
 const BaseCard = (props) => {
   return (
     <Card>
-      <Box p={2} display="flex" alignItems="center">
+      <Box px={2}  display="flex" alignItems="center">
         <Typography variant="h2">{props.title}</Typography>
       </Box>
       <CardContent>{props.children}</CardContent>

@@ -1,12 +1,43 @@
 import React from "react";
-import { Card, CardContent, Typography, Box } from "@mui/material";
+import { Card, CardContent, Typography, Box, ButtonGroup, Button } from "@mui/material";
 import dynamic from "next/dynamic";
 import BaseCard from "../baseCard/BaseCard";
+import { useState } from "react";
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
+
+const SelectLine = ({select, setSelect})=> {
+  
+  const [hover,setHover] = useState(-1)
+
+  return(
+    <ButtonGroup variant="outlined" aria-label="outlined button group">
+            <Button onClick={()=>setSelect(0)} onMouseOver={()=>setHover(0)} onMouseOut={()=>setHover(-1)} style={{width : 100 }} color="primary" size="medium" variant={hover == 0 || select == 0 ? "contained" : ""}>
+              Temperature
+            </Button>
+            <Button onClick={()=>setSelect(1)} onMouseOver={()=>setHover(1)} onMouseOut={()=>setHover(-1)} style={{width : 100}}  color="primary" size="medium" variant={hover == 1 || select == 1 ? "contained" : ""}>
+              Vibration
+            </Button>
+            <Button onClick={()=>setSelect(2)} onMouseOver={()=>setHover(2)} onMouseOut={()=>setHover(-1)} style={{width : 100}} color="primary" size="medium" variant={hover == 2 || select == 2 ? "contained" : ""}>
+              Dégradation
+            </Button>
+    </ButtonGroup>
+  )
+}
 const SalesOverview = () => {
-  const optionssalesoverview = {
-    grid: {
+  const [select, setSelect] = useState(0)
+  const color = [["#03c9d7"],["#fb9678"],["#e46a76"]]
+   const optionssalesoverview ={
+    chart: {
+      id: "basic-bar",
+ 
+        stacked: true
+    }
+    ,
+    stroke: {
+      curve: 'smooth',
+    },
+        grid: {
       show: true,
       borderColor: "transparent",
       strokeDashArray: 3,
@@ -16,7 +47,16 @@ const SalesOverview = () => {
         bottom: 0,
       },
     },
-    plotOptions: {
+    fill: {
+      type: "gradient",
+      gradient: {
+        shadeIntensity: 1,
+        opacityFrom: 0.7,
+        opacityTo: 0.9,
+        stops: [0, 90, 100]
+      }
+    },
+        plotOptions: {
       bar: {
         horizontal: false,
         columnWidth: "50%",
@@ -24,98 +64,57 @@ const SalesOverview = () => {
         borderRadius: 5,
       },
     },
-
-    colors: ["#03c9d7","#fb9678","#e46a76"], //["#fb9678", "#03c9d7"],
-    fill: {
-      type: "solid",
-      opacity: 1,
-    },
-    chart: {
-      offsetX: -15,
-      toolbar: {
-        show: false,
-      },
-      foreColor: "#adb0bb",
-      fontFamily: "'DM Sans',sans-serif",
-      sparkline: {
-        enabled: false,
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    markers: {
-      size: 0,
-    },
-    legend: {
-      show: false,
-    },
+        colors: color[0], //["#fb9678", "#03c9d7"],
     xaxis: {
       type: "category",
       categories: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "July",
-        "Aug",
-        "Sept",
-        "Oct",
-        "Nov",
-        "Dec",
-      ],
-      labels: {
-        style: {
-          cssClass: "grey--text lighten-2--text fill-color",
-        },
-      },
+              "Jan",
+              "Feb",
+              "Mar",
+              "Apr",
+              "May",
+              "Jun",
+              "July",
+              "Aug",
+              "Sept",
+              "Oct",
+              "Nov",
+              "Dec",
+            ],
     },
-    yaxis: {
-      show: true,
-      min: 100,
-      max: 400,
-      tickAmount: 3,
-      labels: {
-        style: {
-          cssClass: "grey--text lighten-2--text fill-color",
-        },
-      },
-    },
-    stroke: {
-      show: true,
-      width: 5,
-      lineCap: "butt",
-      colors: ["transparent"],
-    },
-    tooltip: {
-      theme: "dark",
-    },
-  };
-  const seriessalesoverview = [
+       
+
+  }
+
+
+
+   const seriessalesoverview = [
     {
       name: "Bon états",
       data: [355, 390, 300, 350, 390, 180, 355, 390, 300, 350, 390, 180],
     },
     {
       name: "fonctionnal",
-      data: [280, 250, 325, 215, 250, 310, 280, 250, 325, 215, 250, 310],
+      data: [180, 250, 125, 185, 350, 210, 180, 150, 125, 215, 150, 90],
     },
     {
       name: "Mauvais états",
-      data: [180, 100, 130, 125, 150, 210, 120, 110, 130, 120, 150, 110],
-    },
-  ];
+      data: [80, 60, 90, 105, 90, 19, 20, 11, 30, 29, 50, 37],
+    },   
+  ]
+
   return (
-    <BaseCard title="Sales Overview">
+    <>
+    <BaseCard >
+    <SelectLine select={select} setSelect={setSelect} />
       <Chart
         options={optionssalesoverview}
-        series={seriessalesoverview}
-        type="bar"
+        series={[seriessalesoverview[select]]}
+        type="area"
         height="295px"
       />
     </BaseCard>
+    </>
   );
 };
 

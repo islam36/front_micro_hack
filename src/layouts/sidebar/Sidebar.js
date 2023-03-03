@@ -75,11 +75,7 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
           ))}
         </List>
       </Box>
-
-<<<<<<< HEAD
-
-=======
->>>>>>> aa4da4f9ac983f18bf231911cfbea6b1125eab92
+w
     </Box>
   );
   if (lgUp) {
