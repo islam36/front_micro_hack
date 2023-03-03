@@ -17,7 +17,6 @@ import {
 import FeatherIcon from "feather-icons-react";
 import LogoIcon from "../logo/LogoIcon";
 import Menuitems from "./MenuItems";
-import Buynow from "./Buynow";
 import { useRouter } from "next/router";
 
 const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
@@ -77,7 +76,10 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
         </List>
       </Box>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> aa4da4f9ac983f18bf231911cfbea6b1125eab92
     </Box>
   );
   if (lgUp) {
