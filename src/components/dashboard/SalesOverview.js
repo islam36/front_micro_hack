@@ -9,7 +9,7 @@ const SalesOverview = () => {
     grid: {
       show: true,
       borderColor: "transparent",
-      strokeDashArray: 2,
+      strokeDashArray: 3,
       padding: {
         left: 0,
         right: 0,
@@ -19,13 +19,13 @@ const SalesOverview = () => {
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: "42%",
+        columnWidth: "50%",
         endingShape: "rounded",
         borderRadius: 5,
       },
     },
 
-    colors: ["#fb9678", "#03c9d7"],
+    colors: ["#03c9d7","#fb9678","#e46a76"], //["#fb9678", "#03c9d7"],
     fill: {
       type: "solid",
       opacity: 1,
@@ -95,12 +95,16 @@ const SalesOverview = () => {
   };
   const seriessalesoverview = [
     {
-      name: "Ample Admin",
+      name: "Bon états",
       data: [355, 390, 300, 350, 390, 180, 355, 390, 300, 350, 390, 180],
     },
     {
-      name: "Pixel Admin",
+      name: "fonctionnal",
       data: [280, 250, 325, 215, 250, 310, 280, 250, 325, 215, 250, 310],
+    },
+    {
+      name: "Mauvais états",
+      data: [180, 100, 130, 125, 150, 210, 120, 110, 130, 120, 150, 110],
     },
   ];
   return (

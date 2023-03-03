@@ -1,7 +1,7 @@
 import React from "react";
 import FeatherIcon from "feather-icons-react";
 import Image from "next/image";
-import userimg from "../../../assets/images/users/user2.jpg";
+import userimg from "../../../assets/images/users/pf.png";
 import {
   Box,
   Menu,
@@ -13,7 +13,7 @@ import {
   Button,
   Divider,
 } from "@mui/material";
-const ProfileDD = () => {
+const ProfileDD = ({isSearch}) => {
   const [anchorEl4, setAnchorEl4] = React.useState(null);
 
   const handleClick4 = (event) => {
@@ -64,7 +64,7 @@ const ProfileDD = () => {
                 ml: 1,
               }}
             >
-              Julia
+              Mohamed
             </Typography>
             <FeatherIcon icon="chevron-down" width="20" height="20" />
           </Box>
