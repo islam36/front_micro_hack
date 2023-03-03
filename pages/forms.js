@@ -17,44 +17,20 @@ const Forms = () => {
   return (
     <Grid container spacing={0}>
       <Grid item xs={12} lg={12}>
-        <BaseCard title="Form Layout">
+        <BaseCard title="Ajouter une machine">
           <Stack spacing={3}>
+            <TextField id="name-basic" label="Nom" variant="outlined" />
+            <TextField id="email-basic" label="Service" variant="outlined" />
+            <TextField id="outlined-multiline-static" label="Modele" />
             <TextField
-              id="name-basic"
-              label="Name"
-              variant="outlined"
-              defaultValue="Nirav Joshi"
-            />
-            <TextField id="email-basic" label="Email" variant="outlined" />
-            <TextField
-              id="pass-basic"
-              label="Password"
-              type="password"
-              variant="outlined"
-            />
-            <TextField
-              id="outlined-multiline-static"
-              label="Text Area"
-              multiline
-              rows={4}
-              defaultValue="Default Value"
-            />
-            <TextField
-              error
               id="er-basic"
-              label="Error"
-              defaultValue="ad1avi"
+              label="Date de mise en place              "
               variant="outlined"
             />
             <FormGroup>
               <FormControlLabel
                 control={<Checkbox defaultChecked />}
                 label="Terms & Condition"
-              />
-              <FormControlLabel
-                disabled
-                control={<Checkbox />}
-                label="Disabled"
               />
             </FormGroup>
             <FormControl>
