@@ -39,6 +39,11 @@ const Menuitems = [
     icon: "grid",
     href: "/table",
   },
+  {
+    title: "Machines",
+    icon: "monitor",
+    href: "/machines",
+  },
 ];
 
 export default Menuitems;

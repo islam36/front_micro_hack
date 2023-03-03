@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "@mui/material";
-import Image from "next/image";
-import LogoDark from "../../../assets/images/logos/logo-dark.svg";
-
+import {Typography} from '@mui/material'
 const LogoIcon = () => {
   return (
-    <Link href="/">
-      <Image src={LogoDark} alt={LogoDark} />
+    <Link href="/" sx={{
+      "text-decoration": "none",
+      color: "black"
+      }}>
+      <Typography variant="h1" sx={{
+        fontWeight: "700",
+        fontSize: "24px"
+      }}>UpWork Insights</Typography>
     </Link>
   );
 };

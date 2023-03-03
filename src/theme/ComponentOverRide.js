@@ -36,6 +36,11 @@ const components = {
       "*[dir='rtl'] .welcomebg:before": {
         backgroundPosition: "top -24px left -9px !important",
       },
+      ".table-row:hover": {
+        backgroundColor: "#eee",
+        "transition": "all .3s ease",
+        "cursor": "pointer"
+      }
     },
   },
   MuiContainer: {
