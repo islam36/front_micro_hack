@@ -69,22 +69,23 @@ export default function MachineDetails() {
         <BaseCard title="Les alertes déclanchées pour la machine">
           <Stack spacing={2}>
             <Alert severity="error">
-              <AlertTitle>{"PANNE [02/03/2023 13:05]"} </AlertTitle>
+              <AlertTitle>{"PANNE [ 02-03-2023 13:05 ]"} </AlertTitle>
               {"aux niveau de l'articulation du bras métalique num 4"}
             </Alert>
 
-            <Alert severity="warning">
-              <AlertTitle>{"POTENIELLE PANNE [01/03/2023 12:58]"} </AlertTitle>
+            <Alert severity="warning" >
+              <AlertTitle  >{"POTENIELLE PANNE [ 01-03-2023 12:58 ]"} </AlertTitle>
               {"au niveau de l'articulation du bras métalique num 4"}
             </Alert>
 
             <Alert severity="warning">
-              <AlertTitle>{"POTENIELLE PANNE [28/02/2023 12:52]"} </AlertTitle>
+              <AlertTitle>{"POTENIELLE PANNE [ 28-02-2023 12:52 ]"} </AlertTitle>
               {"au niveau de l'articulation du bras métalique num 4"}
             </Alert>
 
-            <Alert severity="info">
-              <AlertTitle>{"RAPPEL [25/02/2023 12:00]"} </AlertTitle>
+            <Alert severity="info"  >
+              
+              <AlertTitle>{"RAPPEL [ 25-02-2023 12:00 ] "} </AlertTitle>
               {"RAPPEL de maintenance du bras métalique num 4"}
             </Alert>
           </Stack>
