@@ -2,10 +2,12 @@ import React from "react";
 import { Link } from "@mui/material";
 import Image from "next/image";
 import LogoDark from "../../../assets/images/logos/new_logo.svg";
+import { useRouter } from "next/router";
 
 const LogoIcon = () => {
+  const router = useRouter();
   return (
-    <Link href="/">
+    <div onClick={()=>router.push("/")} href="/">
       <svg
         style={{
           "transform": "scale(1.3) translate(15px, 5px)"
@@ -25,7 +27,7 @@ const LogoIcon = () => {
           fill="white"
         />
       </svg>
-    </Link>
+    </div>
   );
 };
 

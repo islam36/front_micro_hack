@@ -23,7 +23,7 @@ const machines = [
     machine : "machine 1",
     status : 0,
     date: "12-02-2017",
-    descr : "aux niveau de l'articulation du bras métalique num 4"
+    descr : "disque dur de la machine tombe en panne"
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const machines = [
     status : 1,
     machine : "machine 2",
     date: "12-02-2017",
-    descr : "aux niveau de l'articulation du bras métalique num 4"
+    descr : "un bruit excessif"
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ const machines = [
     nom: "Alert 3",
     machine : "machine 3",
     date: "12-02-2017",
-    descr : "aux niveau de l'articulation du bras métalique num 4"
+    descr : "surchauffer en raison de l'utilisation intensive"
   },
   {
     id: 3,
@@ -103,12 +103,12 @@ const AlertsTable = () => {
               }}
             >
               <TableCell>
-                <Typography variant="h6">{machine.status === 0? (<Alert severity="error" sx={{ width: "fit-content", pt:"10px"}}>
-              <AlertTitle>PANNE</AlertTitle>
-            </Alert>):machine.status === 1? (<Alert severity="warning" sx={{ width: "fit-content", pt:"10px"}}>
-              <AlertTitle>POTENTIELLE PANNE</AlertTitle>
-            </Alert>):<Alert severity="info" sx={{ width: "fit-content", pt:"10px"}}>
-              <AlertTitle>RAPPEL</AlertTitle>
+                <Typography  variant="h6">{machine.status === 0? (<Alert style={{width : "200px"}} severity="error" sx={{ width: "fit-content", pt:"10px"}}>
+              <AlertTitle style={{fontSize  :"12px",fontWeight : "bold",marginTop : "2px"}}>PANNE</AlertTitle>
+            </Alert>):machine.status === 1? (<Alert  style={{width : "200px"}} severity="warning" sx={{ width: "fit-content", pt:"10px"}}>
+              <AlertTitle style={{fontSize  :"12px",fontWeight : "bold",marginTop : "2px"}}>POTENTIELLE PANNE</AlertTitle>
+            </Alert>):<Alert  style={{width : "200px"}} severity="info" sx={{ width: "fit-content", pt:"10px"}}>
+              <AlertTitle style={{fontSize  :"12px",fontWeight : "bold",marginTop : "2px"}} >RAPPEL</AlertTitle>
             </Alert>}</Typography>
               </TableCell>
               <TableCell>

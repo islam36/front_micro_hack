@@ -27,7 +27,7 @@ const machines = [
   {
     id: 2,
     nom: "machine assemblage num 1",
-    modele: "25CE7",
+    modele: "25CED7",
     service: "assemblage",
     etat: "adéquat",
     date: "12-02-2017",

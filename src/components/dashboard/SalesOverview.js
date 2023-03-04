@@ -108,6 +108,7 @@ const SalesOverview = () => {
       type: "category",
       categories: [...hoursList.reverse()],
     },
+   
     series: [
       {
         name: "Performant",
