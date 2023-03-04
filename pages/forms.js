@@ -33,53 +33,11 @@ const Forms = () => {
                 label="Terms & Condition"
               />
             </FormGroup>
-            <FormControl>
-              <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
-              <RadioGroup
-                aria-labelledby="demo-radio-buttons-group-label"
-                defaultValue="female"
-                name="radio-buttons-group"
-              >
-                <FormControlLabel
-                  value="female"
-                  control={<Radio />}
-                  label="Female"
-                />
-                <FormControlLabel
-                  value="male"
-                  control={<Radio />}
-                  label="Male"
-                />
-                <FormControlLabel
-                  value="other"
-                  control={<Radio />}
-                  label="Other"
-                />
-              </RadioGroup>
-            </FormControl>
           </Stack>
           <br />
           <Button variant="contained" mt={2}>
             Submit
           </Button>
-        </BaseCard>
-      </Grid>
-
-      <Grid item xs={12} lg={12}>
-        <BaseCard title="Form Design Type">
-          <Stack spacing={3} direction="row">
-            <TextField
-              id="outlined-basic"
-              label="Outlined"
-              variant="outlined"
-            />
-            <TextField id="filled-basic" label="Filled" variant="filled" />
-            <TextField
-              id="standard-basic"
-              label="Standard"
-              variant="standard"
-            />
-          </Stack>
         </BaseCard>
       </Grid>
     </Grid>

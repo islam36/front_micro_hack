@@ -11,11 +11,11 @@ import {
 
 const BaseCard = (props) => {
   return (
-    <Card>
+    <Card  >
       <Box px={2}  display="flex" alignItems="center">
-        <Typography variant="h2">{props.title}</Typography>
+        <Typography style={{fontSize : 16,letterSpacing : 1.2}} variant="h2">{props.title}</Typography>
       </Box>
-      <CardContent>{props.children}</CardContent>
+      <CardContent   >{props.children}</CardContent>
     </Card>
   );
 };

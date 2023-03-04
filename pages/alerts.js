@@ -1,5 +1,6 @@
 import { Grid, Alert, Stack, AlertTitle } from "@mui/material";
 import BaseCard from "../src/components/baseCard/BaseCard";
+import AlertsTable from "../src/components/dashboard/AlertsTable";
 
 const Alerts = () => {
   return (
@@ -60,7 +61,12 @@ const Alerts = () => {
           </Stack>
         </BaseCard>
       </Grid>
+      <Grid item xs={12} lg={12}>
+
+      <AlertsTable/>
     </Grid>
+    </Grid>
+
   );
 };
 

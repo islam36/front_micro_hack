@@ -8,6 +8,7 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
+import SalesOverview from "../../src/components/dashboard/SalesOverview";
 
 const machineData = {
   id: 4,
@@ -24,23 +25,23 @@ export default function MachineDetails() {
 
   return (
     <Grid container spacing={2}>
+      <Grid item xs={12} lg={12}>
+        <SalesOverview />
+      </Grid>
       <Grid item xs={12} md={4}>
-        <BaseCard title="Information technique de la machine">
-          <Timeline
-            sx={{
-              p: 0,
-            }}
+        <BaseCard   title="Information technique">
+          <Timeline style={{margin : 0,padding:0}}
           >
             {Object.keys(machineData).map((key, index) => (
-              <TimelineItem key={index}>
+              <TimelineItem  key={index}>
                 <TimelineOppositeContent
                   sx={{
-                    fontSize: "12px",
+                    fontSize: "2px",
                     fontWeight: "700",
-                    flex: "0",
+                    flex: "0"
                   }}
                 ></TimelineOppositeContent>
-                <TimelineSeparator>
+                <TimelineSeparator >
                   <TimelineDot
                     variant="outlined"
                     sx={{
@@ -89,8 +90,6 @@ export default function MachineDetails() {
           </Stack>
         </BaseCard>
       </Grid>
-
-      <Grid item xs={12} lg={12}></Grid>
     </Grid>
   );
 }
