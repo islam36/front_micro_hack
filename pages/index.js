@@ -4,6 +4,7 @@ import SalesOverview from "../src/components/dashboard/SalesOverview";
 import DailyActivity from "../src/components/dashboard/DailyActivity";
 import ProductPerfomance from "../src/components/dashboard/ProductPerfomance";
 import BarOverview from "../src/components/dashboard/BarOverview";
+import MachinesTable from "../src/components/dashboard/MachinesTable";
 
 export default function Index() {
   return (
@@ -15,8 +16,8 @@ export default function Index() {
       {/* <Grid item xs={12} lg={4}>
         <DailyActivity />
       </Grid> */}
-      <Grid item xs={12} lg={12}>
-        <ProductPerfomance />
+        <Grid item xs={12} lg={12}>
+        <MachinesTable index={true} />
       </Grid>
     </Grid>
   );

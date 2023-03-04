@@ -19,49 +19,49 @@ import { useRouter } from "next/router";
 const machines = [
   {
     id: 1,
-    nom: "machine assemblage num 1",
-    modele: "25CE7",
-    service: "assemblage",
-    etat: "bon état",
-    date: "12/02/2017",
+    nom: "alert 1",
+    machine : "machine 1",
+    status : 0,
+    date: "12-02-2017",
+    descr : "aux niveau de l'articulation du bras métalique num 4"
   },
   {
     id: 2,
-    nom: "machine assemblage num 1",
-    modele: "25CE7",
-    service: "assemblage",
-    etat: "fonctionnel",
-    date: "12/02/2017",
+    nom: "alert 2",
+    status : 1,
+    machine : "machine 2",
+    date: "12-02-2017",
+    descr : "aux niveau de l'articulation du bras métalique num 4"
   },
   {
     id: 3,
-    nom: "machine assemblage num 1",
-    modele: "25CE7",
-    service: "assemblage",
-    etat: "bon état",
-    date: "12/02/2017",
+    status : 1,
+    nom: "Alert 3",
+    machine : "machine 3",
+    date: "12-02-2017",
+    descr : "aux niveau de l'articulation du bras métalique num 4"
   },
   {
-    id: 4,
-    nom: "machine assemblage num 1",
-    modele: "25CE7",
-    service: "assemblage",
-    etat: "endommagée",
-    date: "12/02/2017",
+    id: 3,
+    status : 2,
+    nom: "alert 4",
+    machine : "machine 4",
+    date: "12-02-2017",
+    descr : "RAPPEL de maintenance du bras métalique num 4"
   },
 ];
 
 const bg = {
   "bon état": "#03c9d7",
-  endommagée: "#e46a76",
-  fonctionnel: "#fb9678",
+  'endommagée': "#e46a76",
+  'fonctionnel': "#fb9678",
 };
 
 const AlertsTable = () => {
   const router = useRouter();
 
   return (
-    <BaseCard title="Liste des alertes" style="width:100%">
+    <BaseCard title="Liste des machines" className='width:full'>
       <Table
         aria-label="simple table"
         sx={{
@@ -78,7 +78,7 @@ const AlertsTable = () => {
             </TableCell>
             <TableCell>
               <Typography color="textSecondary" variant="h6">
-                Nom
+                Machine
               </Typography>
             </TableCell>
             <TableCell>
@@ -89,11 +89,6 @@ const AlertsTable = () => {
             <TableCell>
               <Typography color="textSecondary" variant="h6">
                 Description
-              </Typography>
-            </TableCell>
-            <TableCell>
-              <Typography color="textSecondary" variant="h6">
-                Date de mise en place
               </Typography>
             </TableCell>
           </TableRow>
@@ -108,50 +103,26 @@ const AlertsTable = () => {
               }}
             >
               <TableCell>
-                <Typography variant="h6">
-                  {machine.id === 1 ? (
-                    <Alert
-                      severity="error"
-                      sx={{
-                        ml: "0px",
-                        mr: "0px",
-                      }}
-                    >
-                      <AlertTitle></AlertTitle>
-                    </Alert>
-                  ) : machine.id === 2 ? (
-                    <Alert severity="warning">
-                      <AlertTitle></AlertTitle>
-                    </Alert>
-                  ) : (
-                    <Alert severity="info">
-                      <AlertTitle></AlertTitle>
-                    </Alert>
-                  )}
-                </Typography>
+                <Typography variant="h6">{machine.status === 0? (<Alert severity="error">
+              <AlertTitle></AlertTitle>
+            </Alert>):machine.status === 1? (<Alert severity="warning">
+              <AlertTitle></AlertTitle>
+            </Alert>):<Alert severity="info">
+              <AlertTitle></AlertTitle>
+            </Alert>}</Typography>
               </TableCell>
               <TableCell>
-                <Typography variant="h6">{machine.nom}</Typography>
+                <Typography variant="h6">{machine.machine}</Typography>
               </TableCell>
               <TableCell>
                 <Typography color="textSecondary" variant="h6">
-                  {machine.service}
+                  {machine.date}
                 </Typography>
               </TableCell>
               <TableCell>
-                <Chip
-                  sx={{
-                    pl: "4px",
-                    pr: "4px",
-                    backgroundColor: bg[machine.etat],
-                    color: "#fff",
-                  }}
-                  size="small"
-                  label={machine.etat}
-                ></Chip>
-              </TableCell>
-              <TableCell>
-                <Typography variant="h6">{machine.date}</Typography>
+                <Typography color="textSecondary" variant="h6">
+                  {machine.descr}
+                </Typography>
               </TableCell>
               <TableCell>
                 <div
@@ -159,7 +130,8 @@ const AlertsTable = () => {
                     display: "flex",
                     gap: "10px",
                   }}
-                ></div>
+                >
+                </div>
               </TableCell>
             </TableRow>
           ))}

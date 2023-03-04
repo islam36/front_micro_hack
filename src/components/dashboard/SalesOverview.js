@@ -15,10 +15,10 @@ const SelectLine = ({select, setSelect})=> {
             <Button onClick={()=>setSelect(0)} onMouseOver={()=>setHover(0)} onMouseOut={()=>setHover(-1)} style={{width : 100 }} color="primary" size="medium" variant={hover == 0 || select == 0 ? "contained" : ""}>
               Temperature
             </Button>
-            <Button onClick={()=>setSelect(1)} onMouseOver={()=>setHover(1)} onMouseOut={()=>setHover(-1)} style={{width : 100}}  color="primary" size="medium" variant={hover == 1 || select == 1 ? "contained" : ""}>
+            <Button onClick={()=>setSelect(1)} onMouseOver={()=>setHover(1)} onMouseOut={()=>setHover(-1)} style={{width : 100}}  color="secondary" size="medium" variant={hover == 1 || select == 1 ? "contained" : ""}>
               Vibration
             </Button>
-            <Button onClick={()=>setSelect(2)} onMouseOver={()=>setHover(2)} onMouseOut={()=>setHover(-1)} style={{width : 100}} color="primary" size="medium" variant={hover == 2 || select == 2 ? "contained" : ""}>
+            <Button onClick={()=>setSelect(2)} onMouseOver={()=>setHover(2)} onMouseOut={()=>setHover(-1)} style={{width : 100}} color="error" size="medium" variant={hover == 2 || select == 2 ? "contained" : ""}>
               Dégradation
             </Button>
     </ButtonGroup>
@@ -27,6 +27,13 @@ const SelectLine = ({select, setSelect})=> {
 const SalesOverview = () => {
   const [select, setSelect] = useState(0)
   const color = [["#03c9d7"],["#fb9678"],["#e46a76"]]
+  var hoursList = [];
+
+for (var i = 0; i < 10; i++) {
+  var d = new Date(); // get current date and time
+  d.setHours(d.getHours() - i); // subtract i hours
+ hoursList.push(  d.getHours()  >= 12 ? `${d.getHours() % 12 != 0 ? d.getHours() % 12 : 12 } PM` : `${d.getHours() % 12 != 0 ? d.getHours() % 12 : 12} AM`,); // add hoursList[0]  to array
+}
    const optionssalesoverview ={
     chart: {
       id: "basic-bar",
@@ -64,22 +71,10 @@ const SalesOverview = () => {
         borderRadius: 5,
       },
     },
-        colors: color[0], //["#fb9678", "#03c9d7"],
+        colors: color[select], //["#fb9678", "#03c9d7"],
     xaxis: {
       type: "category",
-      categories: [
-              "Jan",
-              "Feb",
-              "Mar",
-              "Apr",
-              "May",
-              "Jun",
-              "July",
-              "Aug",
-              "Sept",
-              "Oct",
-              "Nov",
-              "Dec",
+      categories: [...hoursList.reverse()
             ],
     },
        
@@ -91,15 +86,15 @@ const SalesOverview = () => {
    const seriessalesoverview = [
     {
       name: "Bon états",
-      data: [355, 390, 300, 350, 390, 180, 355, 390, 300, 350, 390, 180],
+      data: [355, 390, 300, 350, 390, 180, 355, 390, 300, 350],
     },
     {
       name: "fonctionnal",
-      data: [180, 250, 125, 185, 350, 210, 180, 150, 125, 215, 150, 90],
+      data: [180, 250, 125, 185, 350, 210, 180, 150, 125, 215],
     },
     {
       name: "Mauvais états",
-      data: [80, 60, 90, 105, 90, 19, 20, 11, 30, 29, 50, 37],
+      data: [80, 60, 90, 105, 90, 19, 20, 11, 30, 29],
     },   
   ]
 

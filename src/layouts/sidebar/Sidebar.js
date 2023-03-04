@@ -35,7 +35,7 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
   const location = curl.pathname;
 
   const SidebarContent = (
-    <Box p={2} height="100%">
+    <Box style={{background :"#232B2C"}} p={2} height="100%">
       <LogoIcon />
       <Box mt={2}>
         <List>
@@ -48,7 +48,7 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
                   selected={location === item.href}
                   sx={{
                     mb: 1,
-                    ...(location === item.href && {
+                    ...( (location === item.href || (location.includes(item.href) && item.href != '/') ) && {
                       color: "white",
                       backgroundColor: (theme) =>
                         `${theme.palette.primary.main}!important`,
@@ -58,7 +58,7 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
                   <ListItemIcon>
                     <FeatherIcon
                       style={{
-                        color: `${location === item.href ? "white" : ""} `,
+                        color: `${location === item.href ? "white" : "white"} `,
                       }}
                       icon={item.icon}
                       width="20"
@@ -66,7 +66,7 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
                     />
                   </ListItemIcon>
 
-                  <ListItemText onClick={onSidebarClose}>
+                  <ListItemText style={{color : "#FFF"}} onClick={onSidebarClose}>
                     {item.title}
                   </ListItemText>
                 </ListItem>
@@ -75,7 +75,6 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
           ))}
         </List>
       </Box>
-w
     </Box>
   );
   if (lgUp) {

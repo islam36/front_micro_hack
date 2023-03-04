@@ -23,6 +23,7 @@ const KeyBarOver = ({})=> {
 }
 
 const BarOverview = () => {
+  console.log(new Date().getHours(),"mm")
   const optionssalesoverview = {
     grid: {
       show: true,

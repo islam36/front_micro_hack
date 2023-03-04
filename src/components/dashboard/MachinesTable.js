@@ -55,8 +55,9 @@ const bg = {
   'fonctionnel': "#fb9678",
 };
 
-const MachinesTable = () => {
+const MachinesTable = ({index}) => {
   const router = useRouter();
+  
 
   return (
     <BaseCard title="Liste des machines">
@@ -183,7 +184,15 @@ const MachinesTable = () => {
           mt: "20px",
         }}
       >
-        <Pagination count={10} color="primary" />
+        {!index ? (
+            <Pagination count={10} color="primary" />
+        ) : (
+          <div style={{width : "100%" ,display : "flex" , flexDirection : "row-reverse",paddingRight : "20px"}}>
+            <div onClick={()=>router.push("/machines")}
+             style={{letterSpacing  : 1.1 , fontSize : "16px", color : "#fb9678",cursor : "pointer"}}>See All</div>
+            </div>
+        )}
+        
       </Stack>
     </BaseCard>
   );
