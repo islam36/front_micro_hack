@@ -21,39 +21,39 @@ const machines = [
     nom: "machine assemblage num 1",
     modele: "25CE7",
     service: "assemblage",
-    etat: "bon état",
-    date: "12/02/2017",
+    etat: "performant",
+    date: "12-02-2017",
   },
   {
     id: 2,
     nom: "machine assemblage num 1",
     modele: "25CE7",
     service: "assemblage",
-    etat: "fonctionnel",
-    date: "12/02/2017",
+    etat: "adéquat",
+    date: "12-02-2017",
   },
   {
     id: 3,
     nom: "machine assemblage num 1",
     modele: "25CE7",
     service: "assemblage",
-    etat: "bon état",
-    date: "12/02/2017",
+    etat: "performant",
+    date: "12-02-2017",
   },
   {
     id: 4,
     nom: "machine assemblage num 1",
     modele: "25CE7",
     service: "assemblage",
-    etat: "endommagée",
-    date: "12/02/2017",
+    etat: "défaillant",
+    date: "12-02-2017",
   },
 ];
 
 const bg = {
-  "bon état": "#03c9d7",
-  'endommagée': "#e46a76",
-  'fonctionnel': "#fb9678",
+  "performant": "#03c9d7",
+  'défaillant': "#e46a76",
+  'adéquat': "#fb9678",
 };
 
 

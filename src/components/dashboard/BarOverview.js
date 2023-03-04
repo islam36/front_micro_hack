@@ -10,13 +10,13 @@ const KeyBarOver = ({})=> {
   return(
     <ButtonGroup variant="outlined" aria-label="outlined button group">
             <Button  style={{width : 100 }} color="primary" size="small" variant={"contained" }>
-            High
+            Performant
             </Button>
             <Button  style={{width : 100}}  color="error" size="small" variant={"contained" }>
-            adequate
+            adéquat
             </Button>
             <Button  style={{width : 100}} color="secondary" size="small" variant={"contained"}>
-            Low
+            défaillant
             </Button>
     </ButtonGroup>
   )
@@ -51,15 +51,15 @@ const BarOverview = () => {
     },
     series: [
       {
-        name: "High-performing",
+        name: "Performant",
         data: [355, 390, 300, 350, 390, 180, 355, 390, 300, 350, 390, 180],
       },
       {
-        name: "adequately-performing",
+        name: "adéquat",
         data: [280, 250, 325, 215, 250, 310, 280, 250, 325, 215, 250, 310],
       },
       {
-        name: "Low-performing",
+        name: "défaillant",
         data: [280, 250, 325, 215, 250, 310, 280, 250, 325, 215, 250, 310],
       },
     ],
@@ -128,15 +128,15 @@ const BarOverview = () => {
   };
   const seriessalesoverview = [
     {
-      name: "High-performing",
+      name: "Performant",
       data: [355, 390, 300, 350, 390, 180, 355, 390, 300, 350, 390, 180],
     },
     {
-      name: "adequately-performing",
+      name: "adéquat",
       data: [280, 250, 325, 215, 250, 310, 280, 250, 325, 215, 250, 310],
     },
     {
-      name: "Low-performing",
+      name: "défaillant",
       data: [280, 250, 325, 215, 250, 310, 280, 250, 325, 215, 250, 310],
     },
   ];
