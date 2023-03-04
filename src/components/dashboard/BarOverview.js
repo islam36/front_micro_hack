@@ -141,7 +141,7 @@ const BarOverview = () => {
     },
   ];
   return (
-    <BaseCard title="The performance of machines">
+    <BaseCard title="Performance des machines">
       <Chart
         options={optionssalesoverview}
         series={seriessalesoverview}
