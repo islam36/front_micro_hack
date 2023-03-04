@@ -13,6 +13,7 @@ import {
 import BaseCard from "../baseCard/BaseCard";
 import Feather from "feather-icons-react";
 import { useRouter } from "next/router";
+import Head from 'next/head';
 
 const machines = [
   {
@@ -55,12 +56,22 @@ const bg = {
   'fonctionnel': "#fb9678",
 };
 
+
+
 const MachinesTable = ({index}) => {
   const router = useRouter();
+
+  const btn = {
+    text: "ajouter machine",
+    onClick() {
+      router.push('/forms')
+    }
+  }
   
 
   return (
-    <BaseCard title="Liste des machines">
+    <BaseCard title="Liste des machines" btn={btn} >
+      <Head><title>Liste des machines</title> </Head>
       <Table
         aria-label="simple table"
         sx={{

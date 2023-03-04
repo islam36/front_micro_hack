@@ -10,11 +10,6 @@ const Menuitems = [
     href: "/machines",
   },
   {
-    title: "Forms",
-    icon: "layout",
-    href: "/forms",
-  },
-  {
     title: "Alerts",
     icon: "info",
     href: "/alerts",

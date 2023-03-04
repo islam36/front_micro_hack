@@ -5,10 +5,12 @@ import DailyActivity from "../src/components/dashboard/DailyActivity";
 import ProductPerfomance from "../src/components/dashboard/ProductPerfomance";
 import BarOverview from "../src/components/dashboard/BarOverview";
 import MachinesTable from "../src/components/dashboard/MachinesTable";
+import Head from 'next/head';
 
 export default function Index() {
   return (
     <Grid container spacing={0}>
+      <Head><title>Dashboard</title> </Head>
       <Grid item xs={12} lg={12}>
         <BarOverview />
       </Grid>

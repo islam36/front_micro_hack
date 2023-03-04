@@ -47,7 +47,7 @@ const machines = [
     nom: "alert 4",
     machine : "machine 4",
     date: "12-02-2017",
-    descr : "RAPPEL de maintenance du bras métalique num 4"
+    descr : "maintenance du bras métalique num 4"
   },
 ];
 
@@ -61,7 +61,7 @@ const AlertsTable = () => {
   const router = useRouter();
 
   return (
-    <BaseCard title="Liste des machines" className='width:full'>
+    <BaseCard title="Liste des alertes" className='width:full'>
       <Table
         aria-label="simple table"
         sx={{
@@ -103,12 +103,12 @@ const AlertsTable = () => {
               }}
             >
               <TableCell>
-                <Typography variant="h6">{machine.status === 0? (<Alert severity="error">
-              <AlertTitle></AlertTitle>
-            </Alert>):machine.status === 1? (<Alert severity="warning">
-              <AlertTitle></AlertTitle>
-            </Alert>):<Alert severity="info">
-              <AlertTitle></AlertTitle>
+                <Typography variant="h6">{machine.status === 0? (<Alert severity="error" sx={{ width: "fit-content", pt:"10px"}}>
+              <AlertTitle>PANNE</AlertTitle>
+            </Alert>):machine.status === 1? (<Alert severity="warning" sx={{ width: "fit-content", pt:"10px"}}>
+              <AlertTitle>POTENTIELLE PANNE</AlertTitle>
+            </Alert>):<Alert severity="info" sx={{ width: "fit-content", pt:"10px"}}>
+              <AlertTitle>RAPPEL</AlertTitle>
             </Alert>}</Typography>
               </TableCell>
               <TableCell>

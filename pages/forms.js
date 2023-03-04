@@ -10,6 +10,7 @@ import {
   FormLabel,
   FormControl,
   Button,
+  Input
 } from "@mui/material";
 import BaseCard from "../src/components/baseCard/BaseCard";
 
@@ -26,17 +27,15 @@ const Forms = () => {
               id="er-basic"
               label="Date de mise en place              "
               variant="outlined"
+              type="date"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
-            <FormGroup>
-              <FormControlLabel
-                control={<Checkbox defaultChecked />}
-                label="Terms & Condition"
-              />
-            </FormGroup>
           </Stack>
           <br />
           <Button variant="contained" mt={2}>
-            Submit
+            ajouter
           </Button>
         </BaseCard>
       </Grid>
